@@ -308,7 +308,7 @@ ON Inventories.ProductID = Products.ProductID
 CREATE or ALTER VIEW vInventoriesByProductsByDates
 WITH SCHEMABINDING
 AS
-SELECT TOP 100000 ProductName, Inventories.InventoryDate, Inventories.COUNT
+SELECT TOP 100000 Products.ProductName, Inventories.InventoryDate, Inventories.COUNT
 FROM dbo.Products JOIN dbo.Inventories
 ON Inventories.ProductID = Products.ProductID
 ORDER BY ProductName, InventoryDate, Count
@@ -547,5 +547,6 @@ Select * From [dbo].[vInventoriesByProductsByEmployees]
 Select * From [dbo].[vInventoriesForChaiAndChangByEmployees]
 Select * From [dbo].[vEmployeesByManager]
 Select * From [dbo].[vInventoriesByProductsByCategoriesByEmployees]
+
 
 /***************************************************************************************/
